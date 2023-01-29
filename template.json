@@ -1,0 +1,40 @@
+{
+    "Actor": {
+        "types": ["Aventurero"],
+        "Aventurero": {
+            "atributos": {
+                "fue": {
+                    "valor": 10,
+                    "primaria": "false"
+                },
+                "des": {
+                    "valor": 10,
+                    "primaria": "false"
+                },
+                "con": {
+                    "valor": 10,
+                    "primaria": "false"
+                },
+                "int": {
+                    "valor": 10,
+                    "primaria": "false"
+                },
+                "sab": {
+                    "valor": 10,
+                    "primaria": "false"
+                },
+                "car": {
+                    "valor": 10,
+                    "primaria": "false"
+                }
+            }
+        }
+    },
+    "Item": {
+        "types": ["Arma"],
+        "Arma": {
+            "precio": 0
+        }
+    }
+
+}
