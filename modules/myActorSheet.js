@@ -16,7 +16,7 @@ export default class cronicasActorSheet extends ActorSheet{
         const data = super.getData();
         if (this.actor.type == 'Aventurero') {
           //this._prepareCharacterItems(data);
-          //this._calculaValores(data);
+          this._calculaValores(data);
         }
         return data;
     }
@@ -85,34 +85,42 @@ export default class cronicasActorSheet extends ActorSheet{
     //CALCULO LOS VALORES DE BONUS DE LAS CARACTERÍSTICAS
     _calculaValores(actorData) {
         const sheetData = actorData;
-       // let Power_Bonus=0;
-       
-        for (let i of sheetData.items) {
-            if (i.type === "Rune"){
-                if (i.system.Advance == 3){
-                    Power_Bonus+=Number(i.system.Bonus.Power);
-                   
-                }
-            } else
-            if (i.type === "Item" || i.type === "Armor"){
-                if (i.system.Hits.value < i.system.Hits.max){
-                    Power_Bonus+=Number(i.system.Bonus.Power);
-                  
-                }
-            }
-            else
-            {
-                Power_Bonus+=Number(i.system.Bonus.Power);
-               
-            }
-
-
-            
+        this.actor.update ({ 'system.atributos.fue.bono': this.calculaBono (this.actor.system.atributos.fue.valor)})
+        this.actor.update ({ 'system.atributos.des.bono': this.calculaBono (this.actor.system.atributos.des.valor)})
+        this.actor.update ({ 'system.atributos.con.bono': this.calculaBono (this.actor.system.atributos.con.valor)})
+        this.actor.update ({ 'system.atributos.int.bono': this.calculaBono (this.actor.system.atributos.int.valor)})
+        this.actor.update ({ 'system.atributos.sab.bono': this.calculaBono (this.actor.system.atributos.sab.valor)})
+        this.actor.update ({ 'system.atributos.car.bono': this.calculaBono (this.actor.system.atributos.car.valor)})
+    }
+    calculaBono (atributo){
+        switch(atributo){
+            case 1: return -4;
+            case 2:
+            case 3: return -3;
+            case 4:
+            case 5: return -2;
+            case 6:
+            case 7:
+            case 8: return -1;
+            case 9:
+            case 10:
+            case 11:
+            case 12: return 0;
+            case 13:
+            case 14:
+            case 15: return 1;
+            case 16:
+            case 17: return 2;
+            case 18:
+            case 19: return 3;
+            case 20:
+            case 21: return 4;
+            case 22:
+            case 23: return 5;
+            case 24:
+            case 25: return 6;
+            default: return 0;
         }
-        //let Power_Total= Power_Bonus + Number(this.actor.system.Power.value);
-        
-        //this.actor.update ({ 'system.Power.bonus': Power_Bonus });
-        
     }
 
     /*COSAS DE EVENTOS Y CLICKS VARIOS */

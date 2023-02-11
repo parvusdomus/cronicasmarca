@@ -5,26 +5,32 @@
             "atributos": {
                 "fue": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 },
                 "des": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 },
                 "con": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 },
                 "int": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 },
                 "sab": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 },
                 "car": {
                     "valor": 10,
+                    "bono": 0,
                     "primaria": "false"
                 }
             }
